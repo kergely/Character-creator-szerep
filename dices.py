@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 # necessary packages
 
 def throwdice(dicetype,thrownumber=1):
+    """ Throws dice """
     value=0
     # # if thrownumber==1:
     # #     value=random.randint(0,dicetype)
@@ -15,7 +16,7 @@ def throwdice(dicetype,thrownumber=1):
 # known
 
 class combination(object):
-    """docstring for combination."""
+    """Combination is a type of throw."""
     def __init__(self, whattothrow):
         self.whattothrow = whattothrow
         self.content = {}
