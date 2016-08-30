@@ -72,6 +72,7 @@ class combination(object):
                     dump=dump+toadd
         if plot==True:
             plt.hist(dump,normed=1)
+            plt.show()
 
     def manythrows(self,plot=False,throws=1000):
         #results=[]
@@ -91,12 +92,12 @@ class combination(object):
 
 ### class definition
 
-STR=combination("3d6")
-CON=combination("2d6+2d4")
-INT=combination("6+2d6")
-
-STR.statistics(plot=True)
-CON.statistics(plot=True)
-INT.statistics(plot=True)
-
+# STR=combination("3d6")
+# CON=combination("2d6+2d4")
+# INT=combination("6+2d6")
+#
+# STR.statistics(plot=True)
+# CON.statistics(plot=True)
+# INT.statistics(plot=True)
+#
 plt.show()
