@@ -9,7 +9,7 @@ def throwdice(dicetype,thrownumber=1):
     # #     value=random.randint(0,dicetype)
     # elif thrownumber > 1:
     for i in range(1,thrownumber+1):
-        value=value+random.randint(0,dicetype)
+        value=value+random.randint(1,dicetype)
     return value
 
 # begin diagnostics of dicethrows in game
@@ -45,8 +45,8 @@ class combination(object):
                 summa+=throwdice(int(dice),self.content[dice])
         return summa
 
-    def statistics(self,plot=False,average=False):
-        # this generating is going to done recursively
+    def statistics(self,plot=False,average=False,sort=False):
+        # this generating is going to be done recursively
         dump=[0] # this is the easisest way to generate a histogram
         for dices in self.content.keys():
             if dices=="constant":
@@ -71,10 +71,22 @@ class combination(object):
                         i=0
                     dump=dump+toadd
         if plot==True:
-            plt.hist(dump,normed=1)
-            plt.show()
+            plt.hist(sorted(dump),normed=1)
+            # plt.show()
+        if sort==True:
+            ordered=sorted(dump)
+            paired={}
+            before=0
+            for element in ordered:
+                if element != before:
+                    paired[str(element)]=1
+                else:
+                    paired[str(element)]+=1
+                before=element
+            return paired
 
     def manythrows(self,plot=False,throws=1000):
+        """Throws the dice combination many times, capable of plotting it"""
         #results=[]
         dump=[]
         for i in range(1,throws):
