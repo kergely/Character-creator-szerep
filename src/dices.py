@@ -25,6 +25,7 @@ class combination(object):
         for letter in self.whattothrow:
             if letter == "+":
                 if ("d" in textoconvert):
+                    # this needs fixing
                     self.content[self.whattothrow[i+1]]=int(self.whattothrow[i-1])
                 else:
                     self.content['constant']=int(textoconvert)
@@ -71,7 +72,8 @@ class combination(object):
                         i=0
                     dump=dump+toadd
         if plot==True:
-            plt.hist(sorted(dump),normed=1)
+            oszlops=max(dump)-min(dump)+1
+            plt.hist(sorted(dump),bins=oszlops,normed=1)
             # plt.show()
         if sort==True:
             ordered=sorted(dump)
@@ -98,7 +100,8 @@ class combination(object):
             pass
         if plot==True:
             #return results
-            plt.hist(dump,normed=1)
+            oszlops=max(dump)-min(dump)+1
+            plt.hist(dump,bins=oszlops,normed=1)
             #plt.show()
             #print dump
 
