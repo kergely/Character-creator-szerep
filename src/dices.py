@@ -78,11 +78,11 @@ class combination(object):
                             i = i + 1
                         i = 0
                     dump = dump + toadd
-        if plot == True:
+        if plot is True:
             oszlops = max(dump) - min(dump) + 1
             plt.hist(sorted(dump), bins=oszlops, normed=1)
             # plt.show()
-        if sort == True:
+        if sort is True:
             ordered = sorted(dump)
             paired = {}
             before = 0
@@ -102,10 +102,10 @@ class combination(object):
             throw = self.do()
             # results[self.do()]+=1
             dump.append(throw)
-        if plot == False:
+        if plot is False:
             # return results
             pass
-        if plot == True:
+        if plot is True:
             # return results
             oszlops = max(dump) - min(dump) + 1
             plt.hist(dump, bins=oszlops, normed=1)
