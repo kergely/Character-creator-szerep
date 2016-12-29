@@ -14,3 +14,10 @@ It's functions are:
 - self.manythrows(plot:Bool,throws:int): does the throw throws number of times. If plot is True then plots a histogram using pythons matplotlib
 
 It is now a module, which can be called as src.dices from main.
+
+### src.skills
+
+The skills file is meant to be the creator of the skills, which later characters can draw upon.
+The file first creates the _skill_ class, which is used to store the skills.
+Two dictionaries are added by the program which are used as global variables in later runs of the module. The first one is _standardlist_ which contains all the STANDARD skills, why the similarly named _professionallist_ contains the PROFESSIONAL skills.
+These dictionaries are 
