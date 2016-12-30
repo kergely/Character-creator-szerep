@@ -16,7 +16,10 @@ import src.skills as skills
 # plt.show()
 
 
-plus = "Lore"
-tester = skills.knownskills(plus)
-print tester
-raw_input("Press enter to exit")
+plus1 = "Lenin"
+plus2 = "Commerce"
+tester = skills.knownskills(plus1, plus2)
+tester.learn("Commerce")
+print tester["Commerce"].base
+x = raw_input("Press enter to exit")
+print x+"debuger"

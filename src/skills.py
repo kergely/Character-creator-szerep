@@ -108,15 +108,37 @@ class knownskills(dict):
         global professionallist
         self.update(standardlist)  # creating the Standard skills
         for element in args:
-            # TODO -> a catch-try method against misspelling
             # one shold be capable off adding, this is with the arguments
-            self[element] = professionallist[element]
+            try:
+                self[element] = professionallist[element]
+            except KeyError as hiba:
+                msg = str(hiba) + \
+                    "is not a recognized professional skill in Mythras"
+                print msg
+                print "It was not added to the list of skills"
+            except:
+                print "Something went wrong"
+                print element + " was not added to the list of skills"
+            # this handled the input errors
 
     def learn(self, *args):
         global professionallist
         for element in args:
-            # TODO -> a catch-try method against misspelling, can be copied
-            # from the __init__ part
+            if element in self:
+                print element, "is already in the learned skills list", \
+                    ", it was not added to protect the value"
+            else:
+                try:
+                    self[element] = professionallist[element]
+                except KeyError as hiba:
+                    msg = str(hiba) + \
+                        "is not a recognized professional skill in Mythras"
+                    print msg
+                    print "It was not added to the list of skills"
+                except:
+                    print "Something went wrong"
+                    print element + " was not added to the list of skills"
+            # this handled the input errors
             # TODO also check whether it is already in the skills list
             self[element] = professionallist[element]
 

@@ -20,4 +20,4 @@ It is now a module, which can be called as src.dices from main.
 The skills file is meant to be the creator of the skills, which later characters can draw upon.
 The file first creates the _skill_ class, which is used to store the skills.
 Two dictionaries are added by the program which are used as global variables in later runs of the module. The first one is _standardlist_ which contains all the STANDARD skills, why the similarly named _professionallist_ contains the PROFESSIONAL skills.
-These dictionaries are 
+These dictionaries are used in the creation of the _knownskills_ object which is a derivative of a dictionary. It includes functions for selling, and can be amended to fit later needs.

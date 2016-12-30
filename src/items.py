@@ -22,3 +22,4 @@ class inventory(dict):
     def sell(self, name, numbers):
         # TODO check if there are enough to be sold
         self[name]
+        return self[name].value
