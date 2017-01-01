@@ -68,7 +68,7 @@ professionallist = {
     "Commerce": skill("INT+CHA"),
     "Courtesy": skill("INT+CHA"),
     "Craft": skill("DEX+INT"),
-    "Culture": skill("INTx2"),
+    "Culture": skill("INTx2", encaffect=False),
     "Devotion": skill("POW+CHA"),
     "Disguise": skill("INT+CHA"),
     "Engineering": skill("INTx2"),
@@ -76,7 +76,7 @@ professionallist = {
     "Folk Magic": skill("POW +CHA"),
     "Gambling": skill("INT+POW"),
     "Healing": skill("INT+POW"),
-    "Language": skill("INT+CHA"),
+    "Language": skill("INT+CHA", encaffect=False),
     "Literacy": skill("INTx2"),
     "Lockpicking": skill("DEXx2"),
     "Lore": skill("INTx2"),
@@ -139,7 +139,6 @@ class knownskills(dict):
                     print "Something went wrong"
                     print element + " was not added to the list of skills"
             # this handled the input errors
-            # TODO also check whether it is already in the skills list
             self[element] = professionallist[element]
 
 # test = knownskills("Disguise")
